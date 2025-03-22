@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         isJumpPressed = inputActions.Player.Jump.IsPressed();
-        Debug.Log(isJumpPressed);
         // Проверка нажатия прыжка
         if (isJumpPressed && isGrounded)
         {
@@ -49,7 +48,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         moveInput = inputActions.Player.Move.ReadValue<Vector2>();
-        Debug.Log(moveInput);
         // Движение
         rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
 
