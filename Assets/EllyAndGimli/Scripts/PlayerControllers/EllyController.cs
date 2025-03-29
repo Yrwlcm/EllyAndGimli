@@ -12,6 +12,9 @@ public class EllyController : PlayerControllerBase
 	private readonly Func<Vector2, float, int, bool> _isOverlappingWithWall = (Vector2 position, float radius, int layerMask)
 		=> Physics2D.OverlapCircle(position, radius, layerMask) != null;
 
+	[Header("Опции двойного прыжка")]
+	[SerializeField] private float _timeToActivateDoubleJump = 0.5f;
+
 	[Header("Связанное с коллизиями со стенами")]
 	[SerializeField] private Transform _leftWallCheck;
 	[SerializeField] private Transform _rightWallCheck;
@@ -68,7 +71,7 @@ public class EllyController : PlayerControllerBase
 	private IEnumerator JumpCoroutine()
 	{
 		_canMakeSecondJump = true;
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(_timeToActivateDoubleJump);
 		_canMakeSecondJump = false;
 	}
 }
