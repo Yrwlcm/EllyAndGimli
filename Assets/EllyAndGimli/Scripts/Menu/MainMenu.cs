@@ -3,14 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public string nextLevelSceneName;
+    public string levelSelectSceneName;
+    
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(nextLevelSceneName);
     }
 
     public void OpenLevelSelect()
     {
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene(levelSelectSceneName);
     }
 
     public void ExitGame()
