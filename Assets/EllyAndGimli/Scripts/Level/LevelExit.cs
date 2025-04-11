@@ -9,6 +9,7 @@ public class LevelExit : MonoBehaviour
     
     private bool ellyIn;
     private bool gimliIn;
+    private bool crystalsCollected;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,7 +31,7 @@ public class LevelExit : MonoBehaviour
 
     private void CheckIfBothReady()
     {
-        if (!ellyIn || !gimliIn) 
+        if (!ellyIn || !gimliIn || !crystalsCollected) 
             return;
         
         if (!string.IsNullOrEmpty(nextLevelName))
@@ -44,5 +45,10 @@ public class LevelExit : MonoBehaviour
         UIManager.Instance.ShowVictory();
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OnAllCrystalsCollected()
+    {
+        crystalsCollected = true;
     }
 }
