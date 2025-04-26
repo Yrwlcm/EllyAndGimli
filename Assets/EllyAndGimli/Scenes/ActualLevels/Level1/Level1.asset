@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preview: {fileID: 7028842072390148906, guid: 92aaf14aa9ed0ed4e9c38e78104120f6, type: 3}
   displayName: "\u041F\u0435\u0440\u0432\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
-  sceneName: Level1
+  sceneName: TestLevel1

@@ -578,7 +578,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u042D\u043B\u0438 \u0438 \u0413\u0438\u043C\u043B\u0438"
+  m_text: "\u042D\u043B\u043B\u0438 \u0438 \u0413\u0438\u043C\u043B\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.55
+  m_fontSize: 57.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a449089bf083fe540b8e91e4b67cd237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelSceneName: Level1
+  nextLevelSceneName: TestLevel1
   levelSelectSceneName: LevelSelect
 --- !u!4 &1142750089
 Transform:

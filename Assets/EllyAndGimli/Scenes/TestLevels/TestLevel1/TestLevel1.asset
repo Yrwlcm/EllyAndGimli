@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74f0bebc7d381d74f822b3399b31ec10, type: 3}
-  m_Name: Level2
+  m_Name: TestLevel1
   m_EditorClassIdentifier: 
-  preview: {fileID: -3571278149730965589, guid: 15f10385fbb140a4b9bac31dadcae594, type: 3}
-  displayName: "\u0412\u0442\u043E\u0440\u043E\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
-  sceneName: Level2
+  preview: {fileID: 7028842072390148906, guid: 92aaf14aa9ed0ed4e9c38e78104120f6, type: 3}
+  displayName: "\u041F\u0435\u0440\u0432\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
+  sceneName: TestLevel1
