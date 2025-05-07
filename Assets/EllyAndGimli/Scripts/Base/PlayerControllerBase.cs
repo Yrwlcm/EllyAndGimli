@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -15,14 +16,24 @@ public abstract class PlayerControllerBase : MonoBehaviour
     [SerializeField] protected List<LayerMask> _bottomCollisionLayers;
 
     protected Rigidbody2D _rb;
+    private SpriteRenderer _spriteRenderer;
     protected int _layerMask;
     protected InputSystem_Actions _inputSystemActions;
 
     protected bool _isGrounded;
+    protected bool _isDead;
+
+    private readonly float _revivingTime = 1f;
+
+    public delegate void Dead();
+    public delegate void Revival();
+    public event Revival OnRevival;
+    public event Dead OnDead;
 
     protected void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _inputSystemActions = new InputSystem_Actions();
     }
 
@@ -65,4 +76,25 @@ public abstract class PlayerControllerBase : MonoBehaviour
     {
         _rb.linearVelocity = new Vector2(movementDirection * _moveSpeed, _rb.linearVelocity.y);
     }
+
+    public virtual void Die()
+    {
+        if (!_isDead)
+            StartCoroutine(nameof(RevivalCoroutine));
+    }
+
+    private IEnumerator RevivalCoroutine()
+    {
+        _isDead = true;
+        _inputSystemActions.Disable();
+        _spriteRenderer.enabled = false;
+        _rb.Sleep();
+        OnDead();
+        yield return new WaitForSeconds(_revivingTime);
+        OnRevival();
+        _inputSystemActions.Enable();
+        _spriteRenderer.enabled = true;
+        _rb.WakeUp();
+        _isDead = false;
+	}
 }
