@@ -15,6 +15,7 @@ public abstract class PlayerControllerBase : MonoBehaviour
     [SerializeField] protected List<LayerMask> _bottomCollisionLayers;
 
     protected Rigidbody2D _rb;
+    protected SpriteRenderer _spriteRenderer;
     protected int _layerMask;
     protected InputSystem_Actions _inputSystemActions;
 
@@ -23,6 +24,7 @@ public abstract class PlayerControllerBase : MonoBehaviour
     protected void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _inputSystemActions = new InputSystem_Actions();
     }
 
@@ -63,6 +65,8 @@ public abstract class PlayerControllerBase : MonoBehaviour
 
     protected virtual void DoMove(float movementDirection)
     {
+        if (movementDirection > 0 && !_spriteRenderer.flipX) _spriteRenderer.flipX = true;
+        else if (movementDirection < 0 && _spriteRenderer.flipX) _spriteRenderer.flipX = false;
         _rb.linearVelocity = new Vector2(movementDirection * _moveSpeed, _rb.linearVelocity.y);
     }
 }
