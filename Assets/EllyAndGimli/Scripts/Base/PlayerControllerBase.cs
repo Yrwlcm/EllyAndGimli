@@ -1,3 +1,4 @@
+using Assets.EllyAndGimli.Constants;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -18,6 +19,7 @@ public abstract class PlayerControllerBase : MonoBehaviour
     protected SpriteRenderer _spriteRenderer;
     protected int _layerMask;
     protected InputSystem_Actions _inputSystemActions;
+    protected Animator _animator;
 
     protected bool _isGrounded;
 
@@ -25,6 +27,7 @@ public abstract class PlayerControllerBase : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
         _inputSystemActions = new InputSystem_Actions();
     }
 
@@ -58,6 +61,7 @@ public abstract class PlayerControllerBase : MonoBehaviour
         if (jumpingCondition)
         {
             _rb.linearVelocity = Vector2.up * _jumpForce;
+            _animator.SetTrigger(AnimationsConst.Jump);
             return true;
         }
         return false;
@@ -65,6 +69,7 @@ public abstract class PlayerControllerBase : MonoBehaviour
 
     protected virtual void DoMove(float movementDirection)
     {
+        _animator.SetBool(AnimationsConst.IsWalking, movementDirection != 0);
         if (movementDirection > 0 && !_spriteRenderer.flipX) _spriteRenderer.flipX = true;
         else if (movementDirection < 0 && _spriteRenderer.flipX) _spriteRenderer.flipX = false;
         _rb.linearVelocity = new Vector2(movementDirection * _moveSpeed, _rb.linearVelocity.y);

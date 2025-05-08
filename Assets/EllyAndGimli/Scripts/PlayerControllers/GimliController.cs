@@ -1,3 +1,4 @@
+using Assets.EllyAndGimli.Constants;
 using UnityEngine;
 
 public class GimliController : PlayerControllerBase
@@ -5,6 +6,7 @@ public class GimliController : PlayerControllerBase
 	protected override void Update()
 	{
 		base.Update();
+		_animator.SetBool(AnimationsConst.IsFalling, !_isGrounded);
 	}
 
 	protected override void FixedUpdate()
