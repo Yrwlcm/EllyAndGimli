@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class EllyController : PlayerControllerBase
 {
 	private bool _canMakeSecondJump;
-	private bool _isTouchingWall;
+	private bool _isTouchingLeftWall;
+	private bool _isTouchingRightWall;
 	private float _defaultGravityScale;
 
 	private readonly Func<Vector2, float, int, bool> _isOverlappingWithWall = (Vector2 position, float radius, int layerMask)
@@ -28,14 +29,14 @@ public class EllyController : PlayerControllerBase
 	{
 		base.Start();
 		_defaultGravityScale = _rb.gravityScale;
-		_inputSystemActions.Elly.Jump.started += context => TryDoJump((_isGrounded || _canMakeSecondJump) && !_isTouchingWall);
+		_inputSystemActions.Elly.Jump.started += context => TryDoJump(_isGrounded || _canMakeSecondJump);
 	}
 
 	protected override void Update()
 	{
-		_isTouchingWall = _isOverlappingWithWall(_leftWallCheck.position, _wallCheckRadius, _wallLayer)
-			|| _isOverlappingWithWall(_rightWallCheck.position, _wallCheckRadius, _wallLayer);
-		_rb.gravityScale = _isTouchingWall ? _wallSlidingSpeedDown : _defaultGravityScale;
+		_isTouchingLeftWall = _isOverlappingWithWall(_leftWallCheck.position, _wallCheckRadius, _wallLayer);
+		_isTouchingRightWall = _isOverlappingWithWall(_rightWallCheck.position, _wallCheckRadius, _wallLayer);
+		_rb.gravityScale = _isTouchingLeftWall || _isTouchingRightWall ? _wallSlidingSpeedDown : _defaultGravityScale;
 		base.Update();
 	}
 
@@ -43,8 +44,9 @@ public class EllyController : PlayerControllerBase
 	{
 		var movement = _inputSystemActions.Elly.Move.ReadValue<Vector2>();
 		var isJumpPressed = _inputSystemActions.Elly.Jump.IsPressed();
-		DoMove(movement.x);
 		TryDoWallClimbing(isJumpPressed);
+		TryJumpingFromWall(movement.x, isJumpPressed);
+		DoMove(movement.x);
 		base.FixedUpdate();
 	}
 
@@ -53,6 +55,7 @@ public class EllyController : PlayerControllerBase
 		var hasJumped = base.TryDoJump(jumpingCondition);
 		if (hasJumped)
 		{
+			print(1);
 			StartCoroutine(nameof(JumpCoroutine));
 		}
 		return hasJumped;
@@ -60,11 +63,20 @@ public class EllyController : PlayerControllerBase
 
 	private bool TryDoWallClimbing(bool isJumpPressed)
 	{
-		if (isJumpPressed && _isTouchingWall)
+		if (isJumpPressed && (_isTouchingLeftWall || _isTouchingRightWall))
 		{
-			_rb.linearVelocity = Vector2.up * _wallSlidingSpeedUp;
+			_rb.linearVelocity = new Vector2(_rb.linearVelocity.x, (Vector2.up * _wallSlidingSpeedUp).y);
 			return true;
 		}
+		return false;
+	}
+
+	private bool TryJumpingFromWall(float xMovement, bool isJumpPressed)
+	{
+		var isTouchingWalls = _isTouchingLeftWall || _isTouchingRightWall;
+		if (xMovement == 0 || !isTouchingWalls || !isJumpPressed) return false;
+		if (xMovement > 0 && _isTouchingLeftWall) return TryDoJump(true);
+		else if (xMovement < 0 && _isTouchingRightWall) return TryDoJump(true);
 		return false;
 	}
 

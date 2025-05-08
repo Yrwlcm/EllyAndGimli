@@ -2909,11 +2909,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5367744809695630479, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
       propertyPath: m_Size.x
-      value: 0.68129474
+      value: 0.5731114
       objectReference: {fileID: 0}
     - target: {fileID: 5367744809695630479, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
       propertyPath: m_Offset.x
-      value: 0.000000044151587
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260433728839883786, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: _wallCheckRadius
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: _groundCheckRadius
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: _wallSlidingSpeedUp
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590575289671552381, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
