@@ -35,17 +35,17 @@ public class LevelExit : MonoBehaviour
             return;
         
         if (!string.IsNullOrEmpty(nextLevelName))
-            SceneManager.LoadScene(nextLevelName);
+            LevelManager.Instance.LoadNextScene(nextLevelName);
         else
-            StartCoroutine(ShowVictory());
+            LevelManager.Instance.LoadNextScene("MainMenu");
     }
 
-    private static IEnumerator ShowVictory()
-    {
-        UIManager.Instance.ShowVictory();
-        yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene("MainMenu");
-    }
+    // private static IEnumerator ShowVictory()
+    // {
+    //     UIManager.Instance.ShowVictory();
+    //     yield return new WaitForSeconds(5f);
+    //     SceneManager.LoadScene("MainMenu");
+    // }
 
     public void OnAllCrystalsCollected()
     {

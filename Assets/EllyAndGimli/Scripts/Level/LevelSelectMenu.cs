@@ -6,27 +6,23 @@ using TMPro;
 
 public class LevelSelectMenu : MonoBehaviour
 {
-    public GameObject levelButtonPrefab;
-    public Transform gridParent;
-    public List<LevelData> levels;
-
-    void Start()
+    public void LoadFirstLevel()
     {
-        foreach (var level in levels)
-        {
-            GameObject go = Instantiate(levelButtonPrefab, gridParent);
-            var button = go.GetComponent<Button>();
-
-            // Обновлённые пути из-за вложенности
-            var content = go.transform.Find("Content");
-            var image = content.Find("Preview").GetComponent<Image>();
-            var label = content.Find("Label").GetComponent<TMP_Text>();
-
-            image.sprite = level.preview;
-            label.text = level.displayName;
-
-            string sceneName = level.SceneName;
-            button.onClick.AddListener(() => SceneManager.LoadScene(sceneName));
-        }
+        LevelManager.Instance.LoadNextScene("Level1");
+    }
+    
+    public void LoadSecondLevel()
+    {
+        LevelManager.Instance.LoadNextScene("Level2");
+    }
+    
+    public void LoadThirdLevel()
+    {
+        LevelManager.Instance.LoadNextScene("Level3");
+    }
+    
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
