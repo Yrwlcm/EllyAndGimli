@@ -13,7 +13,6 @@ public class PressureButton : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("TriggerEnter");
         if (!IsActivator(other.gameObject)) return;
 
         objectsOnPlate++;
@@ -23,7 +22,6 @@ public class PressureButton : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("TriggerExit");
         if (!IsActivator(other.gameObject)) return;
 
         objectsOnPlate--;

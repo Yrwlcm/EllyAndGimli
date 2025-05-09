@@ -18,8 +18,11 @@ EditorBuildSettings:
     path: Assets/EllyAndGimli/Scenes/LevelSelect.unity
     guid: b07d803ed2e9e834ca2931d02c1816eb
   - enabled: 1
-    path: Assets/EllyAndGimli/Scenes/ActualLevels/Level1/Level1.unity
+    path: Assets/EllyAndGimli/Scenes/ActualLevels/Level1.unity
     guid: ed853a6382ddbd54a98b5dffb8d75b9c
+  - enabled: 1
+    path: Assets/EllyAndGimli/Scenes/ActualLevels/Level2.unity
+    guid: cb85054aa24db5e49ac288db430a487f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
