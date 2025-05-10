@@ -6581,15 +6581,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
       propertyPath: _jumpForce
-      value: 6.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
       propertyPath: _wallCheckRadius
-      value: 0.01
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
       propertyPath: _wallSlidingSpeedUp
       value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: _timeToActivateDoubleJump
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6622,7 +6626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1015344395053126803, guid: 172105413ab1e3e4db9a121db58912a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.35
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 1015344395053126803, guid: 172105413ab1e3e4db9a121db58912a5, type: 3}
       propertyPath: m_LocalPosition.z

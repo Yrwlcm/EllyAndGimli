@@ -82,12 +82,12 @@ public abstract class PlayerControllerBase : MonoBehaviour
     {
     }
 
-    protected virtual bool TryDoJump(bool jumpingCondition)
+    protected virtual bool TryDoJump(bool jumpingCondition, bool isDouble = false)
     {
         if (jumpingCondition)
         {
             _rb.linearVelocity = Vector2.up * _jumpForce;
-			_animator.SetTrigger(AnimationsConst.Jump);
+			_animator.SetTrigger(isDouble ? AnimationsConst.DoubleJump : AnimationsConst.Jump);
 			return true;
         }
         return false;
@@ -97,8 +97,11 @@ public abstract class PlayerControllerBase : MonoBehaviour
     {
 		if (movementDirection > 0 && !_spriteRenderer.flipX) _spriteRenderer.flipX = true;
 		else if (movementDirection < 0 && _spriteRenderer.flipX) _spriteRenderer.flipX = false;
-		if (_onSlope)
+        if (_onSlope)
+        {
+            _animator.SetBool(AnimationsConst.IsWalking, false);
             return;
+        }
         _rb.linearVelocity = new Vector2(movementDirection * _moveSpeed, _rb.linearVelocity.y);
 		_animator.SetBool(AnimationsConst.IsWalking, movementDirection != 0);
 	}
