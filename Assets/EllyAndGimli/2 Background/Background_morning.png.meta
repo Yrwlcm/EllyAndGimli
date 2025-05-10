@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Background_morning_0: 4162560187573487330
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
