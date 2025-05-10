@@ -11,10 +11,10 @@ public class GimliController : PlayerControllerBase
 	protected override void Update()
 	{
 		base.Update();
-		_animator.SetBool(AnimationsConst.IsFalling, !_isGrounded);
+		_animator.SetBool(AnimationsConst.IsFalling, !_isGrounded && _rb.linearVelocityY < 0);
 		var isLeftPushing = _isOverlapping(_leftSideCheck.position, _sideCheckRadius, _moveableObjectsLayer) && !_spriteRenderer.flipX;
 		var isRightPushing = _isOverlapping(_rightSideCheck.position, _sideCheckRadius, _moveableObjectsLayer) && _spriteRenderer.flipX;
-		_animator.SetBool(AnimationsConst.IsPushing, isLeftPushing || isRightPushing);
+		_animator.SetBool(AnimationsConst.IsPushing, (isLeftPushing || isRightPushing) && _rb.linearVelocityX != 0);
 	}
 
 	protected override void FixedUpdate()

@@ -27,7 +27,7 @@ public class EllyController : PlayerControllerBase
 	{
 		base.Start();
 		_defaultGravityScale = _rb.gravityScale;
-		_inputSystemActions.Elly.Jump.started += context => TryDoJump(_isGrounded || _canMakeSecondJump && !(_isTouchingLeftWall || _isTouchingRightWall));
+		_inputSystemActions.Elly.Jump.started += context => TryDoJump((_isGrounded || _canMakeSecondJump) && !(_isTouchingLeftWall || _isTouchingRightWall));
 	}
 
 	protected override void Update()
@@ -36,7 +36,7 @@ public class EllyController : PlayerControllerBase
 		_isTouchingRightWall = _isOverlapping(_rightWallCheck.position, _wallCheckRadius, _wallLayer);
 		_rb.gravityScale = _isTouchingLeftWall || _isTouchingRightWall ? _wallSlidingSpeedDown : _defaultGravityScale;
 		base.Update();
-		_animator.SetBool(AnimationsConst.IsFalling, !_isGrounded && !_isTouchingLeftWall && !_isTouchingRightWall);
+		_animator.SetBool(AnimationsConst.IsFalling, !_isGrounded && !_isTouchingLeftWall && !_isTouchingRightWall && _rb.linearVelocityY < 0);
 		_animator.SetBool(AnimationsConst.IsWallHanging, _isGrounded && ((_isTouchingLeftWall && !_spriteRenderer.flipX) || (_isTouchingRightWall && _spriteRenderer.flipX)));
 	}
 

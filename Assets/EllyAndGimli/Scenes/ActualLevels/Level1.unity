@@ -6402,11 +6402,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7664856876341409064, guid: 8f284e604c6cd6b4bb504a2e117a4d73, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.76
+      value: -8.05
       objectReference: {fileID: 0}
     - target: {fileID: 7664856876341409064, guid: 8f284e604c6cd6b4bb504a2e117a4d73, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.49
+      value: -4.21
       objectReference: {fileID: 0}
     - target: {fileID: 7664856876341409064, guid: 8f284e604c6cd6b4bb504a2e117a4d73, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6581,7 +6581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
       propertyPath: _jumpForce
-      value: 8
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
       propertyPath: _wallCheckRadius
@@ -6626,7 +6626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1015344395053126803, guid: 172105413ab1e3e4db9a121db58912a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.65
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 1015344395053126803, guid: 172105413ab1e3e4db9a121db58912a5, type: 3}
       propertyPath: m_LocalPosition.z
