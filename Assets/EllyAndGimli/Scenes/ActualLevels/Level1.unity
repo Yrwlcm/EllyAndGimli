@@ -6364,6 +6364,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2260230909037322891, guid: 8f284e604c6cd6b4bb504a2e117a4d73, type: 3}
+      propertyPath: m_Size.x
+      value: 0.81930006
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260230909037322891, guid: 8f284e604c6cd6b4bb504a2e117a4d73, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0681098
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260230909037322891, guid: 8f284e604c6cd6b4bb504a2e117a4d73, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.010439821
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260230909037322891, guid: 8f284e604c6cd6b4bb504a2e117a4d73, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0048650503
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134733910458621790, guid: 8f284e604c6cd6b4bb504a2e117a4d73, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2135136076425672678, guid: 145965c114ffdf84ba75c053e6f63bd3, type: 3}
+    - target: {fileID: 4134733910458621790, guid: 8f284e604c6cd6b4bb504a2e117a4d73, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134733910458621790, guid: 8f284e604c6cd6b4bb504a2e117a4d73, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134733910458621790, guid: 8f284e604c6cd6b4bb504a2e117a4d73, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6024770410057277169, guid: 8f284e604c6cd6b4bb504a2e117a4d73, type: 3}
       propertyPath: m_Name
       value: Gimli
@@ -6483,6 +6515,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1120137696417242080, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574166628923097894, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1574166628923097894, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.88
@@ -6527,6 +6567,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elly
       objectReference: {fileID: 0}
+    - target: {fileID: 5367744809695630479, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5281271
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367744809695630479, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: m_Size.y
+      value: 0.99999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367744809695630479, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0026748397
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: _jumpForce
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: _wallCheckRadius
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
+      propertyPath: _wallSlidingSpeedUp
+      value: 1.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6558,7 +6622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1015344395053126803, guid: 172105413ab1e3e4db9a121db58912a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.65
+      value: -4.35
       objectReference: {fileID: 0}
     - target: {fileID: 1015344395053126803, guid: 172105413ab1e3e4db9a121db58912a5, type: 3}
       propertyPath: m_LocalPosition.z
