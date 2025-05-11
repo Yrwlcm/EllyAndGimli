@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stone_Falling_0: -5259079702253289870
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

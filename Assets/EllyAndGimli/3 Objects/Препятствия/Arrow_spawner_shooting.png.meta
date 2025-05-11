@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Arrow_spawner_shooting_0: 5163239271904489587
+      Arrow_spawner_shooting_1: 5420644817219136654
+      Arrow_spawner_shooting_2: 3848979541805824459
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

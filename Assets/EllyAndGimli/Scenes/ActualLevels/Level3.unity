@@ -1997,16 +1997,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841103873}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 535.2249}
-  m_LocalScale: {x: 194.73793, y: 194.73793, z: 194.73793}
+  m_LocalPosition: {x: 0, y: 0, z: 9.183906}
+  m_LocalScale: {x: 6.5434446, y: 6.5434446, z: 6.5434446}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 2869387911994597379}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 22.490417, y: -6}
-  m_SizeDelta: {x: -1188.0001, y: -496}
+  m_AnchoredPosition: {x: -2.54, y: -1.23}
+  m_SizeDelta: {x: 100.99988, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &841103876
 CanvasRenderer:
@@ -12216,17 +12216,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8519636301938497062, guid: dd5065cf3bec5eb4e85edbc4b51c75ad, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 841103874}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd5065cf3bec5eb4e85edbc4b51c75ad, type: 3}
---- !u!224 &2869387911994597379 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8519636301938497062, guid: dd5065cf3bec5eb4e85edbc4b51c75ad, type: 3}
-  m_PrefabInstance: {fileID: 2869387911994597378}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2977822395126768529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12587,6 +12579,7 @@ SceneRoots:
   - {fileID: 7051243459434807014}
   - {fileID: 5078811603053147486}
   - {fileID: 1029049893}
+  - {fileID: 841103874}
   - {fileID: 2869387911994597378}
   - {fileID: 2063309314}
   - {fileID: 1391174477}
