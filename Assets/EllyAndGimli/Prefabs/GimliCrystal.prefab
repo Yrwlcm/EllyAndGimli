@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8052289231417685287, guid: d5d99b9f428323a4ab9b2c654282f7b2, type: 3}
+  m_Sprite: {fileID: 8068523088585460113, guid: 1d1712b279a0ed8499e7f21a74b1cc91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,7 +127,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.68, y: 6.56}
+    oldSize: {x: 8, y: 9.5}
     newSize: {x: 7.68, y: 6.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -147,4 +147,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f56e9e2893402b4da4da4400bbce7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _requiredColliderTag: Gimli

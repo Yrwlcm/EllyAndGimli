@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
@@ -6,7 +7,14 @@ using UnityEngine.Serialization;
 public class LevelExit : MonoBehaviour
 {
     [SerializeField] private string nextLevelName;
-    
+    [SerializeField] private Sprite openedSprite;
+
+    private SpriteRenderer spriteRenderer;
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     private bool ellyIn;
     private bool gimliIn;
     private bool crystalsCollected;
@@ -50,5 +58,6 @@ public class LevelExit : MonoBehaviour
     public void OnAllCrystalsCollected()
     {
         crystalsCollected = true;
+        spriteRenderer.sprite = openedSprite;
     }
 }

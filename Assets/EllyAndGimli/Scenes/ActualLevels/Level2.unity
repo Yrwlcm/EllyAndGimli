@@ -1965,17 +1965,13 @@ PrefabInstance:
       propertyPath: nextLevelName
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1271274164824591779, guid: d7f98b5341f5ab648b939e1bc6a41465, type: 3}
-      propertyPath: nextLevelScene
-      value: 
-      objectReference: {fileID: 102900000, guid: e9d3cd82822d7bb428429729fcd12f01, type: 3}
     - target: {fileID: 8841869884043344203, guid: d7f98b5341f5ab648b939e1bc6a41465, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.96
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8841869884043344203, guid: d7f98b5341f5ab648b939e1bc6a41465, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9
+      value: -9.09
       objectReference: {fileID: 0}
     - target: {fileID: 8841869884043344203, guid: d7f98b5341f5ab648b939e1bc6a41465, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2012,10 +2008,6 @@ PrefabInstance:
     - target: {fileID: 8998281993815740487, guid: d7f98b5341f5ab648b939e1bc6a41465, type: 3}
       propertyPath: m_Name
       value: Exit
-      objectReference: {fileID: 0}
-    - target: {fileID: 8998281993815740487, guid: d7f98b5341f5ab648b939e1bc6a41465, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14818,7 +14810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8216036414276950044, guid: e391ebb2e8a07864a967c545005ebb3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.27
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 8216036414276950044, guid: e391ebb2e8a07864a967c545005ebb3b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14856,6 +14848,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8441830648653309713, guid: e391ebb2e8a07864a967c545005ebb3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.53
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14877,10 +14873,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 4960157868751835022, guid: dd5065cf3bec5eb4e85edbc4b51c75ad, type: 3}
-      propertyPath: m_PlaneDistance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8519636301938497062, guid: dd5065cf3bec5eb4e85edbc4b51c75ad, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -14988,7 +14980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039447016459006735, guid: f228e39c75ca6b24982f6d16855f7f56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 0.146
       objectReference: {fileID: 0}
     - target: {fileID: 7039447016459006735, guid: f228e39c75ca6b24982f6d16855f7f56, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15205,14 +15197,6 @@ PrefabInstance:
     - target: {fileID: 4443803452742479531, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
       propertyPath: m_Name
       value: Elly
-      objectReference: {fileID: 0}
-    - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
-      propertyPath: _bottomCollisionLayers.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6393476813896603621, guid: 9c353f1103eb06a4d812a89922b62f76, type: 3}
-      propertyPath: _bottomCollisionLayers.Array.data[2].m_Bits
-      value: 1024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
