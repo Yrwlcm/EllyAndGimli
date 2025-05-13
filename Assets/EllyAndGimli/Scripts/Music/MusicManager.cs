@@ -23,7 +23,7 @@ public class MusicManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.E))
 		{
 			_isOff = !_isOff;
-			_audioSource.volume = _isOff ? 0.0f : 0.15f;
+			_audioSource.volume = _isOff ? 0.0f : 0.07f;
 		}
 	}
 }
