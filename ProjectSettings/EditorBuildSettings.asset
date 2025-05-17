@@ -16,10 +16,28 @@ EditorBuildSettings:
     guid: ed853a6382ddbd54a98b5dffb8d75b9c
   - enabled: 1
     path: Assets/EllyAndGimli/Scenes/ActualLevels/Level2.unity
-    guid: cb85054aa24db5e49ac288db430a487f
+    guid: f115eeca1719c8948b9475a2a9e6ed84
   - enabled: 1
     path: Assets/EllyAndGimli/Scenes/ActualLevels/Level3.unity
     guid: f3ed24f044ea1bd42bccb2de8fe9d03d
+  - enabled: 1
+    path: Assets/EllyAndGimli/Scenes/ActualLevels/Level4.unity
+    guid: 600d8c07c8d427c45aa44ad5577a96d4
+  - enabled: 1
+    path: Assets/EllyAndGimli/Scenes/ActualLevels/Level5.unity
+    guid: cb85054aa24db5e49ac288db430a487f
+  - enabled: 1
+    path: Assets/EllyAndGimli/Scenes/ActualLevels/Level6.unity
+    guid: c2b3f4297dc15124987b5f4d6a65d95a
+  - enabled: 1
+    path: Assets/EllyAndGimli/Scenes/ActualLevels/Level7.unity
+    guid: 36ee02519888cd84fa975f644aa72d36
+  - enabled: 1
+    path: Assets/EllyAndGimli/Scenes/ActualLevels/Level8.unity
+    guid: 628fe35e2e0d1cb478cdff57a08462d3
+  - enabled: 1
+    path: Assets/EllyAndGimli/Scenes/ActualLevels/Level9.unity
+    guid: 93f5f9bd52ef2ed41816203b2596076d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

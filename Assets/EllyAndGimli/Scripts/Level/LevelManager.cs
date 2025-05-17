@@ -44,6 +44,13 @@ public class LevelManager : MonoBehaviour
         {
             LoadNextScene("MainMenu");
         }
+        
+        if (!_isReloading &&
+            SceneManager.GetActiveScene().name != "MainMenu" &&
+            _inputSystemActions.UI.Restart.IsPressed()) 
+        {
+            RestartLevel();
+        }
     }
 
     public void RestartLevel()
