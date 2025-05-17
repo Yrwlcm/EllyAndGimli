@@ -1,3 +1,3 @@
-Build path: C:/Users/Slava/Downloads/EllyAndGimli
-Build number: 1
+Build path: C:/Users/Egor/UnityProjects/EllyAndGimli/Builds/EllyAndGimli-win.v.1.02/EllyAndGimli.exe
+Build number: 3
 PluginYG version: 2.0032
