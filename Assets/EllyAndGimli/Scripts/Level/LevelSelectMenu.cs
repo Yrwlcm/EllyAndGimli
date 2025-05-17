@@ -6,19 +6,9 @@ using TMPro;
 
 public class LevelSelectMenu : MonoBehaviour
 {
-    public void LoadFirstLevel()
+    public void LoadLevel(int levelNumber)
     {
-        LevelManager.Instance.LoadNextScene("Level1");
-    }
-    
-    public void LoadSecondLevel()
-    {
-        LevelManager.Instance.LoadNextScene("Level2");
-    }
-    
-    public void LoadThirdLevel()
-    {
-        LevelManager.Instance.LoadNextScene("Level3");
+        LevelManager.Instance.LoadNextScene("Level" + levelNumber);
     }
     
     public void LoadMainMenu()

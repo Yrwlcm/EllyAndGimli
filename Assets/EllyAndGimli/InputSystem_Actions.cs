@@ -957,6 +957,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""3d3e7208-87a9-44ad-8fa6-1f53fb9663c3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Navigate"",
                     ""type"": ""PassThrough"",
                     ""id"": ""c95b2375-e6d9-4b88-9c4c-c5e76515df4b"",
@@ -1476,6 +1485,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""06140d65-f400-476c-8974-a16099686fea"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1570,6 +1590,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Menu = m_UI.FindAction("Menu", throwIfNotFound: true);
+        m_UI_Restart = m_UI.FindAction("Restart", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
         m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
         m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
@@ -2053,6 +2074,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_Menu;
+    private readonly InputAction m_UI_Restart;
     private readonly InputAction m_UI_Navigate;
     private readonly InputAction m_UI_Submit;
     private readonly InputAction m_UI_Cancel;
@@ -2078,6 +2100,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "UI/Menu".
         /// </summary>
         public InputAction @Menu => m_Wrapper.m_UI_Menu;
+        /// <summary>
+        /// Provides access to the underlying input action "UI/Restart".
+        /// </summary>
+        public InputAction @Restart => m_Wrapper.m_UI_Restart;
         /// <summary>
         /// Provides access to the underlying input action "UI/Navigate".
         /// </summary>
@@ -2147,6 +2173,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Menu.started += instance.OnMenu;
             @Menu.performed += instance.OnMenu;
             @Menu.canceled += instance.OnMenu;
+            @Restart.started += instance.OnRestart;
+            @Restart.performed += instance.OnRestart;
+            @Restart.canceled += instance.OnRestart;
             @Navigate.started += instance.OnNavigate;
             @Navigate.performed += instance.OnNavigate;
             @Navigate.canceled += instance.OnNavigate;
@@ -2191,6 +2220,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Menu.started -= instance.OnMenu;
             @Menu.performed -= instance.OnMenu;
             @Menu.canceled -= instance.OnMenu;
+            @Restart.started -= instance.OnRestart;
+            @Restart.performed -= instance.OnRestart;
+            @Restart.canceled -= instance.OnRestart;
             @Navigate.started -= instance.OnNavigate;
             @Navigate.performed -= instance.OnNavigate;
             @Navigate.canceled -= instance.OnNavigate;
@@ -2489,6 +2521,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMenu(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Restart" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRestart(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Navigate" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

@@ -2,53 +2,111 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    [Header("Маяки (child-объекты для удобства)")]
+    [Header("Точки-маяки (child-объекты для удобства)")]
     public Transform startPoint;
     public Transform endPoint;
 
-    [Header("Параметры движения")]
-    public float speed = 2f;
-    public bool pingPong = true;
-    public bool moveOnStart = false;
+    [Header("Параметры")]
+    public float speed      = 2f;
+    public bool  pingPong   = true;
+    public bool  moveOnStart = false;
 
-    // кешированные мировые позиции
+    // ----------------------------------------------------
+
     private Vector3 startPos;
     private Vector3 endPos;
 
-    private bool moving  = false;
-    private bool forward = true;
+    private enum State { Idle, Forward, Backward }
+    private State state = State.Idle;
 
-    private void Awake()
+    private bool buttonDown   = false;   // стоит ли игрок на кнопке
+    private bool forwardFlag  = true;    // куда «должны» ехать дальше (нужно для ping-pong)
+
+    // ----------------------------------------------------
+
+    void Awake()
     {
-        // 1) запоминаем мировые координаты
         startPos = startPoint.position;
         endPos   = endPoint.position;
 
-        // 2) (опц.) отлепляем маяки от платформы, чтобы они не смещались
+        // отвязываем маяки, чтобы они не ездили вместе с платформой
         startPoint.SetParent(null, true);
-        endPoint.SetParent(null, true);
+        endPoint.SetParent(null,  true);
     }
 
-    private void Start() { if (moveOnStart) moving = true; }
-
-    private void Update()
+    void Start()
     {
-        if (!moving)
-            return;
+        if (moveOnStart) StartMoving();
+    }
 
-        var target = forward ? endPos : startPos;
-        var step = speed * Time.deltaTime;
+    void Update()
+    {
+        float step = speed * Time.deltaTime;
+
+        switch (state)
+        {
+            case State.Forward:
+                MoveTowards(endPos, step);
+                if (Arrived(endPos))
+                {
+                    forwardFlag = false;              // теперь «следующее» направление — назад
+                    if (pingPong && buttonDown)       state = State.Backward;
+                    else                              state = State.Idle;
+                }
+                break;
+
+            case State.Backward:
+                MoveTowards(startPos, step);
+                if (Arrived(startPos))
+                {
+                    forwardFlag = true;               // «следующее» направление — вперёд
+                    if (pingPong && buttonDown)       state = State.Forward;
+                    else                              state = State.Idle;
+                }
+                break;
+        }
+    }
+
+    // ----------------------------------------------------
+    // публичные вызовы «кнопки»
+
+    public void StartMoving()          // кнопка НАЖАТА
+    {
+        buttonDown = true;
+
+        if (pingPong)
+        {
+            if (state == State.Idle)                       // продолжить путь
+                state = forwardFlag ? State.Forward : State.Backward;
+        }
+        else
+        {
+            state = State.Forward;                         // всегда к endPos
+        }
+    }
+
+    public void StopMoving()           // кнопка ОТПУЩЕНА
+    {
+        buttonDown = false;
+
+        if (pingPong)
+        {
+            state = State.Idle;                            // просто пауза
+        }
+        else
+        {
+            state = State.Backward;                        // возврат к startPos
+        }
+    }
+
+    // ----------------------------------------------------
+    // вспомогательные
+
+    private void MoveTowards(Vector3 target, float step) =>
         transform.position = Vector3.MoveTowards(transform.position, target, step);
 
-        if (!(Vector3.Distance(transform.position, target) < 0.001f)) 
-            return;
-        
-        if (pingPong)
-            forward = !forward;
-        else
-            moving = false;
-    }
+    private static bool Arrived(Vector3 a, Vector3 b) =>
+        Vector3.SqrMagnitude(a - b) < 1e-6f;
 
-    public void StartMoving() => moving = true;
-    public void StopMoving()  => moving = false;
+    private bool Arrived(Vector3 target) => Arrived(transform.position, target);
 }
